@@ -1,0 +1,2 @@
+rootProject.name = 'LMN-3 DAW'
+include ':app'

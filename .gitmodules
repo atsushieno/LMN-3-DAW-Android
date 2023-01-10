@@ -1,0 +1,3 @@
+[submodule "external/LMN-3-DAW"]
+	path = external/LMN-3-DAW
+	url = https://github.com/FundamentalFrequency/LMN-3-DAW.git

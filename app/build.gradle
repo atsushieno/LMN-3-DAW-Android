@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+
+android {
+    namespace = "dev.atsushieno.juceports.lmn_3_daw"
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "dev.atsushieno.juceports.lmn_3_daw"
+        minSdkVersion    27
+        targetSdkVersion 33
+        externalNativeBuild {
+            cmake {
+                arguments "-DJUCE_DIR=${System.env.JUCE_DIR != null ? System.env.JUCE_DIR : ''}", "-DANDROID_STL=c++_static", "-DANDROID_CPP_FEATURES=exceptions rtti", "-DTRACKTION_BUILD_EXAMPLES=OFF", "-DPACKAGE_TESTS=OFF"
+            }
+        }
+        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+
+    sourceSets {
+        main.java.srcDirs +=
+            [//"../external/JUCE/modules/juce_core/native/javacore/init",
+             //"../external/JUCE/modules/juce_core/native/javacore/app",
+             "../external/LMN-3-DAW/tracktion_engine/modules/juce/modules/juce_gui_basics/native/javaopt/app"]
+        main.res.srcDirs +=
+            []
+    }
+
+    externalNativeBuild {
+        cmake {
+            version = "3.22.1"
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }
+
+    ndkVersion "$ndk_version"
+}
+dependencies {
+    implementation "androidx.core:core-ktx:1.9.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.startup:startup-runtime:1.1.1"
+}
+
