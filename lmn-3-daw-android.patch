@@ -1,3 +1,31 @@
+diff --git a/Source/Main.cpp b/Source/Main.cpp
+index 46d2290..781f6d5 100644
+--- a/Source/Main.cpp
++++ b/Source/Main.cpp
+@@ -14,12 +14,12 @@
+ class GuiAppApplication : public juce::JUCEApplication {
+   public:
+     GuiAppApplication()
+-        : splash(new juce::SplashScreen(
++        /*: splash(new juce::SplashScreen(
+               "Welcome to my app!",
+               juce::ImageFileFormat::loadFrom(
+                   ImageData::tracktion_engine_powered_png,
+                   ImageData::tracktion_engine_powered_pngSize),
+-              true)) {}
++              true))*/ {}
+ 
+     const juce::String getApplicationName() override {
+         return JUCE_APPLICATION_NAME_STRING;
+@@ -92,7 +92,7 @@ class GuiAppApplication : public juce::JUCEApplication {
+         initialiseAudioDevices();
+         mainWindow = std::make_unique<MainWindow>(getApplicationName(), engine,
+                                                   *edit, *midiCommandManager);
+-        splash->deleteAfterDelay(juce::RelativeTime::seconds(4.25), false);
++        //splash->deleteAfterDelay(juce::RelativeTime::seconds(4.25), false);
+     }
+ 
+     void initialiseAudioDevices() {
 diff --git a/Source/Views/Edit/Plugins/ExtendedUIBehaviour.h b/Source/Views/Edit/Plugins/ExtendedUIBehaviour.h
 index 694559f..18db812 100644
 --- a/Source/Views/Edit/Plugins/ExtendedUIBehaviour.h
@@ -19,3 +47,9 @@ index 694559f..18db812 100644
          }
  
          // Once the thread finishes, hide the progress view
+diff --git a/tracktion_engine b/tracktion_engine
+--- a/tracktion_engine
++++ b/tracktion_engine
+@@ -1 +1 @@
+-Subproject commit edd6fb6b0e23aad25463ee2425d8ec9c9d38d918
++Subproject commit edd6fb6b0e23aad25463ee2425d8ec9c9d38d918-dirty

@@ -1,0 +1,19 @@
+diff --git a/modules/juce b/modules/juce
+--- a/modules/juce
++++ b/modules/juce
+@@ -1 +1 @@
+-Subproject commit b0a8bc0ce2a9241c05f47c3a2b9b6b37e8f70513
++Subproject commit b0a8bc0ce2a9241c05f47c3a2b9b6b37e8f70513-dirty
+diff --git a/modules/tracktion_graph/tracktion_graph/tracktion_PlayHead.h b/modules/tracktion_graph/tracktion_graph/tracktion_PlayHead.h
+index 03fd5a5414..43f00f3786 100644
+--- a/modules/tracktion_graph/tracktion_graph/tracktion_PlayHead.h
++++ b/modules/tracktion_graph/tracktion_graph/tracktion_PlayHead.h
+@@ -185,7 +185,7 @@ private:
+ inline PlayHead::PlayHead() noexcept
+ {
+     // There isn't currently a lock-free implementation of this on Linux
+-   #if ! JUCE_LINUX && ! JUCE_WINDOWS
++   #if ! JUCE_LINUX && ! JUCE_WINDOWS && ! JUCE_ANDROID
+     assert (referenceSampleRange.is_lock_free());
+     assert (syncPositions.is_lock_free());
+    #endif
