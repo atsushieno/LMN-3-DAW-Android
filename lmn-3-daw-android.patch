@@ -47,9 +47,3 @@ index 694559f..18db812 100644
          }
  
          // Once the thread finishes, hide the progress view
-diff --git a/tracktion_engine b/tracktion_engine
---- a/tracktion_engine
-+++ b/tracktion_engine
-@@ -1 +1 @@
--Subproject commit edd6fb6b0e23aad25463ee2425d8ec9c9d38d918
-+Subproject commit edd6fb6b0e23aad25463ee2425d8ec9c9d38d918-dirty
